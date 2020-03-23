@@ -2,7 +2,7 @@ package com.qa.main;
 
 public class Results {
 	// creates the 5 variables
-	private int Physics = 150;
+	private int Physics = 50;
 	private int Chemistry = 50;
 	private int Biology = 150;
 	private int TotalMarks = Physics + Chemistry + Biology;
@@ -16,6 +16,12 @@ public class Results {
 	}
 	
 	public String examOverallPercentage() { //returns the percentage
-		return "Overall percentage: " + Percentage + "%";
+		if (Percentage < 60) { //if % is less than 60
+			return "Overall percentage: " + Percentage + "%"
+				+"\n You failed :("; //fail message on new line
+		} else {
+			return "Overall percentage: " + Percentage + "%"
+					+"\n Congrats!"; //pass return message on new line
+		}
 	}
 }
